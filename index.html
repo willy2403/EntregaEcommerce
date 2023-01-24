@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
     <title>GorilaCrew</title>
    
 
-    <link rel="shortcut icon" href="imagenes/logo_pagina.ico" type="image/x-icon" >
+    <link rel="shortcut icon" href="./imagenes/logo_pagina.ico" type="image/x-icon" >
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
@@ -63,6 +64,7 @@
 					<div class="cart-total hidden">
 						<h3>Total:</h3>
 						<span class="total-pagar">$3500</span>
+                        <button class="btn" id="procesarCompra">Comprar</button>
 					</div>
 					<p class="cart-empty">El carrito está vacío</p>
 				</div>
@@ -120,20 +122,19 @@
                     <div class="remeras_letras">
                         <h4>Remera GorilaCrew</h4>
                         <p class="price">$4000</p>
-                        <button class="btn_add">Añadir al carrito</button>   
+                        <button class="btn_add">Añadir al carrito</button> 
                     </div>
             </div>
         </div>
     </section>
-
-
 
     <footer>
         <div class="publicidad">
             <p>&copy; GorilaCrew 2022</p>
         </div> 
     </footer>
+    
+    <script src="sweetalert2.all.min.js"></script>
     <script src="index.js"></script>
-
     </body>
 </html>

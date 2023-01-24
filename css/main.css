@@ -138,6 +138,19 @@ header{
     display: none;
 }
 
+.btn {
+    background-color:#555555; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
 
 /* -----main--- */
 .titulo{
@@ -215,5 +228,6 @@ header{
     color: white;
     margin-top: 60px;
 }
+
 
 

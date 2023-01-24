@@ -10,11 +10,15 @@ btnCart.addEventListener('click', () => {
 //==========//
 const cartinfo = document.querySelector('.cart-product')
 const rowproduct = document.querySelector('.row-product')
+const procesarCompra = document.querySelector('#procesarCompra')
+const activarFuncion = document.querySelector('#activarFuncion')
 
 // lista de todos los contenedores 
 const productlist = document.querySelector('.remeras_menu')
 
 //Variable de arreglo de productos 
+
+
 let allproducts = JSON.parse(localStorage.getItem("allproducts")) || [];
 
 const valorTotal = document.querySelector('.total-pagar')
@@ -132,5 +136,47 @@ const carritoLocal = () =>{
     localStorage.setItem("allproducts", JSON.stringify(allproducts)); 
 }
 
-//get item
+//Continuacion de la compra
+procesarCompra.addEventListener('click',() => {
+    if(allproducts.length === 0){
+        Swal.fire({
+            title: "¡Tu carrito está vacio!",
+            Text: "Compra algo para continuar con la compra",
+            icon: "error",
+            confirmButtonText: "Aceptar",
+        })
+    }else{
+        location.href = "./pagina/compra.html"
+        procesarPedido();
+    }
+})
 
+//procesar compra 
+if (activarFuncion) {
+    activarFuncion.addEventListener("click", procesarPedido);
+  }
+
+function procesarPedido(){
+
+    carritoLocal.forEach((product)=>{
+        const listaCompra = document.querySelector('#lista-compra tbody')
+        const {id, nombre, precio, cantidad, img} = product;
+
+        const row = document.createElement('tr')
+        row.innerHTML += `
+        <td>
+              <img class="img-fluid img-carrito" src="${img}"/>
+              </td>
+              <td>${nombre}</td>
+            <td>${precio}</td>
+            <td>${cantidad}</td>
+            <td>${precio * cantidad}</td>
+            `;
+          listaCompra.appendChild(row);
+    })
+
+}
+//llamado de las funciones 
+carritoLocal();
+showHTML();
+procesarPedido();
